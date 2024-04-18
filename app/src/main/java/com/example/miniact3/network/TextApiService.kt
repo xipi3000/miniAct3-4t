@@ -17,10 +17,6 @@
 package com.example.miniact3.network
 
 
-import com.example.miniact3.model.MarsPhoto
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
@@ -39,16 +35,16 @@ import retrofit2.http.GET
     /**
      * Retrofit service object for creating api calls
      */
-    interface MarsApiService {
+    interface TextApiService {
         @GET("/develop/ui/compose")
-        suspend fun getPhotos(): String
+        suspend fun getText(): String
     }
 
     /**
      * A public Api object that exposes the lazy-initialized Retrofit service
      */
-    object MarsApi {
-        val retrofitService: MarsApiService by lazy {
-            retrofit.create(MarsApiService::class.java)
+    object TextApi {
+        val retrofitService: TextApiService by lazy {
+            retrofit.create(TextApiService::class.java)
         }
 }

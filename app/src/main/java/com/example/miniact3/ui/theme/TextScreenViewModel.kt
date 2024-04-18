@@ -4,8 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.miniact3.model.MarsPhoto
-import com.example.miniact3.network.MarsApi
+import com.example.miniact3.network.TextApi
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -25,15 +24,15 @@ class TextScreenViewModel : ViewModel() {
         private set
 
     init {
-        getMarsPhotos()
+        getHtmlText()
     }
 
 
-    fun getMarsPhotos() {
+    fun getHtmlText() {
         viewModelScope.launch {
             textScreenUiState = TextScreenUiState.Loading
             textScreenUiState = try {
-                val listResult = MarsApi.retrofitService.getPhotos()
+                val listResult = TextApi.retrofitService.getText()
                 TextScreenUiState.Success(
                     listResult
                 )

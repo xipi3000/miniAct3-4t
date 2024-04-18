@@ -15,7 +15,7 @@
  */
 package com.example.miniact3.ui.theme
 
-import ImageScreenUiState
+
 import TextScreenUiState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

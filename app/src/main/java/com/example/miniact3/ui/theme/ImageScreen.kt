@@ -15,7 +15,7 @@
  */
 package com.example.miniact3.ui.theme
 
-import ImageScreenUiState
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,7 +38,7 @@ import com.example.miniact3.R
 
 @Composable
 fun ImageScreen(
-    imageScreenUiState: ImageScreenUiState,
+
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
@@ -52,30 +52,8 @@ fun ImageScreen(
         contentScale = ContentScale.Fit,
         modifier = modifier.fillMaxSize()
     )
-       /* when (imageScreenUiState) {
-            is ImageScreenUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
-            is ImageScreenUiState.Success -> ResultScreen(
-                imageScreenUiState.photos, modifier = modifier
-                    .fillMaxWidth()
 
-            )
-
-            is ImageScreenUiState.Error -> ErrorScreen(modifier = modifier.fillMaxSize())
-            else -> {}
-        }*/
 
 }
 
-/**
- * ResultScreen displaying number of photos retrieved.
- */
-@Composable
-private fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
 
-    ) {
-        Text(text = photos)
-    }
-}

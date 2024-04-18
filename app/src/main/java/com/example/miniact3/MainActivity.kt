@@ -1,8 +1,6 @@
 package com.example.miniact3
 
 
-import ImageScreenViewModel
-import TextScreenUiState
 import TextScreenViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -43,10 +41,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen() {
     val textScreenViewModel: TextScreenViewModel = viewModel()
-    val imageScreenViewModel : ImageScreenViewModel = viewModel()
+
     Column {
         TextScreen(textScreenUiState = textScreenViewModel.textScreenUiState, modifier = Modifier.weight(1f))
-        ImageScreen(imageScreenUiState = imageScreenViewModel.imageScreenUiState, modifier = Modifier.weight(1f))
+        ImageScreen( modifier = Modifier.weight(1f))
     }
 
 }
